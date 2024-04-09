@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Effect from './Effet'
 import reportWebVitals from './reportWebVitals';
-
+import context from './context'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    
     <App />
+    <Effect/>
+    <context/>
   </React.StrictMode>
 );
 

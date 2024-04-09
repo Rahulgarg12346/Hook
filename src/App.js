@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React , {useState} from 'react'
 
-function App() {
+const App = () => {
+  const[counter, setCounter] = useState(0)
+  const[name, setName] = useState("")
+  const[details ,  setDetails] = useState({ counter:0, name:''})
+  function increasecounter (){
+    setDetails((prev)=>({
+      ...prev,
+      counter: prev.counter +1
+    }))
+    setCounter(counter +1)
+  }
+  console.log(details)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <input type='text'onChange={e =>setName( e.target.value)}/>
+      <h1>{name} has clicked {details.counter} times!!</h1>
+      <button onClick={increasecounter} >increase</button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
